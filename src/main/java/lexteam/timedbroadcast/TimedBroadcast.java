@@ -6,8 +6,7 @@
  */
 package lexteam.timedbroadcast;
 
-import lexteam.timedbroadcast.commands.DisableCommand;
-import lexteam.timedbroadcast.commands.EnableCommand;
+import lexteam.timedbroadcast.commands.TimedBroadcastCommand;
 
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -27,9 +26,8 @@ public class TimedBroadcast extends JavaPlugin {
         PluginDescriptionFile dataFile = this.getDescription();
         getLogger().info(dataFile.getName() + " version " + dataFile.getVersion() + " is enabled!");
         
-        // Register our commands
-        getCommand("enabletb").setExecutor(new EnableCommand(this));
-        getCommand("disabletb").setExecutor(new DisableCommand(this));
+        // Register commands
+        getCommand("timedbroadcast").setExecutor(new TimedBroadcastCommand(this));
     }
     
     public void enable() {

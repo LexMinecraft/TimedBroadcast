@@ -2,19 +2,17 @@ name: TimedBroadcast
 main: lexteam.timedbroadcast.TimedBroadcast
 version: ${version}
 commands:
-  enabletb:
-    description: Enabled TimedBroadcast.
-    usage: "Usage: '/enabletb' to enable TimedBroadcast"
-    aliases: tbe
-  disabletb:
-    description: Disables TimedBroadcast.
-    usage: "Usage: '/disabletb' to disable TimedBroadcast"
-    aliases: tbd
+  timedbroadcast:
+    description: Command for TimedBroadcast.
+    usage: "Usage: '/timedbroadcast' to access TimedBroadcast related commands"
+    aliases: tb
 permissions:
 	timedbroadcast.*:
 		description: Gives access to all TimedBroadcast commands.
 		children:
-			timedbroadcast.enable: true
+			timedbroadcast.both: true
+			timedbroadcast.add: true
+			timedbroadcast.removeall: true
 	timedbroadcast.both:
 		description: Enable and disable TimedBroadcast.
 		default: op
@@ -23,4 +21,10 @@ permissions:
 		default: op
 	timedbroadcast.disable:
 		description: Disable TimedBroadcast.
+		default: op
+	timedbroadcast.add:
+		description: Adds a phrase to the broadcast list.
+		default: op
+	timedbroadcast.removeall:
+		description: Removes all phrases in the broadcast list.
 		default: op
