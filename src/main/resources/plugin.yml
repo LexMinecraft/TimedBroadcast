@@ -10,3 +10,17 @@ commands:
     description: Disables TimedBroadcast.
     usage: "Usage: '/disabletb' to disable TimedBroadcast"
     aliases: tbd
+permissions:
+	timedbroadcast.*:
+		description: Gives access to all TimedBroadcast commands.
+		children:
+			timedbroadcast.enable: true
+	timedbroadcast.both:
+		description: Enable and disable TimedBroadcast.
+		default: op
+	timedbroadcast.enable:
+		description: Enable TimedBroadcast.
+		default: op
+	timedbroadcast.disable:
+		description: Disable TimedBroadcast.
+		default: op

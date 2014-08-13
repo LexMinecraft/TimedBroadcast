@@ -8,10 +8,10 @@ package lexteam.timedbroadcast.commands;
 
 import lexteam.timedbroadcast.TimedBroadcast;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 public class EnableCommand implements CommandExecutor {
 	
@@ -22,13 +22,20 @@ public class EnableCommand implements CommandExecutor {
 	}
 
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		boolean isPlayer = false;
-		
-		if (sender instanceof Player) {
-            isPlayer = true;
-        }
-		sender.sendMessage("Enabled TimedBroadcast!");
-		return true;
+		if(!sender.hasPermission("timedbroadcast.enable") || !sender.hasPermission("timedbroadcast.both")) {
+			sender.sendMessage(ChatColor.RED
+                    + "You don't have permission to enable TimedBroadcast!");
+            return false;
+		} else {
+			if(!plugin.getEnabled()) {
+				sender.sendMessage(ChatColor.RED
+	                    + "TimedBroadcast is already enabled!");
+	            return false;
+			} else {
+				sender.sendMessage("Enabled TimedBroadcast!");
+				return true;
+			}
+		}
 	}
 
 }
