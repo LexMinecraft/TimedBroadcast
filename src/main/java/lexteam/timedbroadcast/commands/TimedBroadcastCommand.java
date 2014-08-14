@@ -36,7 +36,7 @@ public class TimedBroadcastCommand implements CommandExecutor {
 	                    + "You don't have permission to enable TimedBroadcast!");
 	            return false;
 			} else {
-				if(!plugin.getEnabled()) {
+				if(plugin.getEnabled()) {
 					sender.sendMessage(ChatColor.RED
 		                    + "TimedBroadcast is already enabled!");
 		            return false;

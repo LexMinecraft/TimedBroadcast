@@ -31,11 +31,17 @@ public class TimedBroadcast extends JavaPlugin {
     }
     
     public void enable() {
+    	PluginDescriptionFile dataFile = this.getDescription();
+        getLogger().info(dataFile.getName() + " version " + dataFile.getVersion() + " is enabled!");
+        
     	this.enabled = true;
     }
     
     public void disable() {
-    	this.enabled = true;
+    	PluginDescriptionFile dataFile = this.getDescription();
+        getLogger().info(dataFile.getName() + " version " + dataFile.getVersion() + " is disabled!");
+        
+    	this.enabled = false;
     }
     
     public boolean getEnabled() {

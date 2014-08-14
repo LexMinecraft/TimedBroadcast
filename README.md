@@ -25,9 +25,11 @@ Download and install the latest version from [Oracle's Java Downloads page](http
 
 Install Apache Maven via the official [Apache Maven Install Docs](http://maven.apache.org/download.cgi#Installation).
 
-### Developers
+### Credits
 
-+ Jamie
+###### Developers
+
++ Jamie (@LexteamJamie)
 
 ### License
 
